@@ -40,7 +40,7 @@ suite('GaiaHeader', function() {
     Object.defineProperty(window, 'innerWidth', this.innerWidth);
   });
 
-  test('It hides the action button if no action type defined', function() {
+  test('It hides the action button if no action type is defined', function() {
     this.dom.innerHTML = '<gaia-header></gaia-header>';
     var el = this.dom.firstElementChild;
     var actionButton = el.shadowRoot.querySelector('.action-button');

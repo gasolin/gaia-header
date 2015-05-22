@@ -70,6 +70,7 @@ const MAXIMUM_FONT_SIZE = 23;
  * @return {Element} constructor
  */
 module.exports = component.register('gaia-header', {
+  extends: HTMLHeadElement.prototype,
 
   /**
    * Called when the element is first created.
@@ -91,8 +92,7 @@ module.exports = component.register('gaia-header', {
     };
 
     // Events
-    this.els.actionButton.addEventListener('click',
-      e => this.onActionButtonClick(e));
+    this.els.actionButton.addEventListener('click', this.onActionButtonClick);
     this.observer = new MutationObserver(this.onMutation.bind(this));
 
     // Properties
